@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+#!/usr/bin/env
 <?php
 
 // O * G * H * A * B
@@ -15,7 +15,7 @@ if (!file_exists(__DIR__.'/madeline.php')) {
 }
 require DIR.'/madeline.php';
 
-$MadelineProto->start();
+
 
 if(!file_exists(__DIR__.'/data.json')){
   file_put_contents(__DIR__.'/data.json','{"power":"on","adminStep":"","typing":"off","echo":"off","markread":"off","poker":"off","enemies":[],"answering":[]}');
