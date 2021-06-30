@@ -17,14 +17,17 @@ define('WEBSERVER_BASE_URL', 'yourdomain.com');
 set_time_limit(0);
 
 if (!file_exists(__DIR__.'/madeline.php')) {
-    copy('https://phar.madelineproto.xyz/madeline.php', __DIR__.'/madeline.php');
+    copy('https://phar.madelineproto.xyz/madeline.php', DIR.'/madeline.php');
 }
-require __DIR__.'/madeline.php';
-require __DIR__.'/vendor/autoload.php';
-
+require DIR.'/madeline.php';
+require DIR.'/vendor/autoload.php';
+$settings = [];
+$settings['logger']['max_size'] = 5*1024*1024;
+$MadelineProto = new \danog\MadelineProto\API(__DIR__.'/oghab.madeline', $settings);
+$MadelineProto->start();
 
 if(!file_exists(__DIR__.'/data.json')){
- file_put_contents('data.json', '{"power":"on","adminStep":"","typing":"off","echo":"off","markread":"off","poker":"off","enemies":[],"answering":[]}');
+ file_put_contents(__DIR__.'/data.json','{"power":"on","adminStep":"","typing":"off","echo":"off","markread":"off","poker":"off","enemies":[],"answering":[]}');
 }
 // Coded by : @Oghab_Tm
 class EventHandler extends \danog\MadelineProto\EventHandler
