@@ -10,7 +10,7 @@
 if (!file_exists(__DIR__.'/madeline.php')) {
     copy('https://phar.madelineproto.xyz/madeline.php', DIR.'/madeline.php');
 }
-require DIR.'/madeline.php';
+include DIR.'/madeline.php';
 
 
 class MyEventHandler extends \danog\MadelineProto\EventHandler
