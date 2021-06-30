@@ -10,21 +10,16 @@
 
 // خواهرت جندس اگه سورسو بفروشی یا منبع رو عوض کنی
 
-
-define('WEBSERVER_BASE_URL', 'yourdomain.com');
-
-
-set_time_limit(0);
-
 if (!file_exists(__DIR__.'/madeline.php')) {
-    copy('https://phar.madelineproto.xyz/madeline.php', DIR.'/madeline.php');
+  copy('https://phar.madelineproto.xyz/madeline.php', DIR.'/madeline.php');
 }
 require DIR.'/madeline.php';
-require DIR.'/vendor/autoload.php';
+
+$MadelineProto->start();
 
 if(!file_exists(__DIR__.'/data.json')){
- file_put_contents(__DIR__.'/data.json','{"power":"on","adminStep":"","typing":"off","echo":"off","markread":"off","poker":"off","enemies":[],"answering":[]}');
-}
+  file_put_contents(__DIR__.'/data.json','{"power":"on","adminStep":"","typing":"off","echo":"off","markread":"off","poker":"off","enemies":[],"answering":[]}');
+ }
 // Coded by : @Oghab_Tm
 class EventHandler extends \danog\MadelineProto\EventHandler
 {
