@@ -1,4 +1,4 @@
-#!/usr/bin/env
+porn detecter api by @Sylixx Channel = @Sylix_team
 <?php
 
 $ch = curl_init();
