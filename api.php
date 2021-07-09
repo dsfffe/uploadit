@@ -1,7 +1,4 @@
 <?php
-API BY @SYLIXX
-
-
 $getid = $_GET['ip'];
 
    $url = "https://sylixapi.herokuapp.com/api/iplookup?q=$getid";
