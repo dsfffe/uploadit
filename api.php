@@ -81,6 +81,11 @@ class XHandler extends EventHandler
             $chat_id         = $peer['bot_api_id'];
             $type            = $peer['type'];
 
+
+            if (isset($update['message']['fwd_from']['saved_from_peer'])){
+                yield $this->messages->sendMessage(['peer' => $chID, 'message' => 'bemola', 'parse_mode' => 'Markdown', 'reply_to_msg_id' => $msg_id]);
+                }
+                
             
             #ADMIN Commands
             if (in_array($user_id, self::Admins) || $user_id == $me_id) {
@@ -117,3 +122,4 @@ $settings = [
 
 $bot = new \danog\MadelineProto\API('X.session', $settings);
 $bot->startAndLoop(XHandler::class);
+
