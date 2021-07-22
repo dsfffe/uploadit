@@ -1,6 +1,6 @@
 <?php
 
-$url = "https://api.ocr.space/Parse/Image";
+$url = "https://i.ibb.co/3vh3r5P/Screenshot-20210722-001839-Phone.jpg";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
