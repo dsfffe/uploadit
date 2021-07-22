@@ -19,6 +19,7 @@ try {
  
   // انلاین
   $MadelineProto->account->updateStatus(['offline' => false]);
+  $MadelineProto->account->updateProfile(['last_name' => "| $time"]);
   // نام
 
 } catch (\Exception $e) {
