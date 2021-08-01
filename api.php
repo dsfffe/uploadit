@@ -117,8 +117,8 @@ $settings = [
         'cache_all_peers_on_startup' => false,
     ],
     'app_info' => [
-        'api_id' => 1374236,
-        'api_hash' => '4df50166bf37f939cd10c71ece878b06'
+        'api_id' => 3063880,
+        'api_hash' => 'e0f71a9affe6526b56ab254c0bea9b1b'
     ]
 ];
 
