@@ -35,14 +35,22 @@ $settings = [];
 $MadelineProto = new \danog\MadelineProto\API('session.madeline',$settings);
 $MadelineProto->start();
  
-if(!file_exists('ooo')){
-  file_put_contents('ooo', '');
-  }
-   if(file_exists('ooo') && file_get_contents('online.txt') == 'on' && (time() - filectime('ooo')) >= 30){
-    @unlink('ooo');
-    @file_put_contents('ooo', '');
-    yield $MadelineProto->account->updateStatus(['offline' => false]);
-   }
+if(file_get_contents('online.txt') == 'on'){
+date_default_timezone_set('Asia/Tehran');
+    $time = date("H꧇i");
+    $fonts = [["𝟶","𝟷","𝟸","𝟹","𝟺","𝟻","𝟼","𝟽","𝟾","𝟿"],
+ ["𝟘","𝟙","𝟚","𝟛","𝟜","𝟝","𝟞","𝟟","𝟠","𝟡"],
+ ["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉"],
+["𝟬","𝟭","𝟮","𝟯","𝟰","𝟱","𝟲","𝟳","𝟴","𝟵"]];
+	$time = date("H꧇i");
+    $time2 = str_replace(range(0,9),$fonts[array_rand($fonts)],date("H꧇i"));
+    $day_number = jdate('j');
+    $month_number = jdate('n');
+    $year_number = jdate('y');
+    $day_name = jdate('l');
+ $MadelineProto->account->updateProfile(['last_name' => "𓆩 𝖇𝖊𝖓𝖏𝖆𝖒𝖎𝖓 $time2 𓆪"]);
+
+}
 if (file_get_contents('timebio.txt') == 'on') {
     $time = date("H꧇i");
     $fonts = [["𝟶","𝟷","𝟸","𝟹","𝟺","𝟻","𝟼","𝟽","𝟾","𝟿"],
@@ -6372,7 +6380,7 @@ if($text == $text and $data['lockpv'] == "on"){
 
        if ($type3 == "supergroup"){
        if ($from_id == "" and $comment['comment']== "on"){
-  $MadelineProto->messages->sendMessage(['peer' => $peer, 'message' => 'اول', 'reply_to_msg_id' => $msg_id]);
+  $MadelineProto->messages->sendMessage(['peer' => $peer, 'message' => 'First', 'reply_to_msg_id' => $msg_id]);
 }
        }
        
