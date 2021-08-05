@@ -2,7 +2,7 @@
 
 // channel : @OGHAB_TM
 
-date_default_timezone_set('Asia/Tehran');
+date_default_timezone_set('Europe/Stcokholm');
 if (!file_exists('madeline.php')) {
 copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
 }
